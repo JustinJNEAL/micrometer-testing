@@ -1,0 +1,20 @@
+spring:
+  jmx:
+    enabled: true
+  application:
+    name: micrometer-testing
+  web:
+    resources:
+      add-mappings: false
+server:
+  shutdown: graceful
+  max-http-request-header-size: 262144
+  servlet:
+    context-path: /micrometer-testing/v1
+management:
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  tracing:
+    sampling:
+      probability: 1.0
